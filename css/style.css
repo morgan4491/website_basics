@@ -1,7 +1,7 @@
 /* RESETS */
 /* Consider creating a 'resets.css' file for all resets */
 body {
-    /* background: red; */
+    background: #0d133e;
     margin: 0;
     font-family: sans-serif;
 }
@@ -15,7 +15,6 @@ a {
 }
 
 /* CUSTOM STYLES */
-    
 header {
     /* Aligns the direct children on a row, from left to right */
     display: flex;
@@ -24,7 +23,7 @@ header {
     align-items: center;
     /* Push the direct children as far apart as possible, using the space between them (x-axis) */
     /* justify-content: space-between; */
-    background: #080a14d9;
+    background: #111527d9;
     padding: 25px 7% 20px;
 }
 
@@ -49,4 +48,37 @@ header nav a {
 /* Selecct all links with the nav except the last one*/
 header nav a:not(:last-child) {
     margin-right: 10px;
+}
+
+.search-container {
+    display: inline-block;
+    align-items: center;
+}
+
+.search-icon {
+    width: 10px;
+    height: 10px;
+}
+
+#searchbutton {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border: 0;
+}
+
+p {
+    color: #4bc385;
+    padding-left: 100px;
+}
+
+.button {
+    margin-left: 100px;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    padding: 0 0 0 100px;
+    margin: 0;
 }
