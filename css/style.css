@@ -1,0 +1,52 @@
+/* RESETS */
+/* Consider creating a 'resets.css' file for all resets */
+body {
+    /* background: red; */
+    margin: 0;
+    font-family: sans-serif;
+}
+
+h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CUSTOM STYLES */
+    
+header {
+    /* Aligns the direct children on a row, from left to right */
+    display: flex;
+    /* Once you set display: flex, you can align items vertically and horizontally with flexbox properties */
+    /* Align items will align the direct children on the y-axis (top to bottom) */
+    align-items: center;
+    /* Push the direct children as far apart as possible, using the space between them (x-axis) */
+    /* justify-content: space-between; */
+    background: #080a14d9;
+    padding: 25px 7% 20px;
+}
+
+header nav {
+    /* Percentage values are always a percentage of the parent's value(width/height) */
+    margin-left: 150px;
+}
+
+header a {
+    color: #d58b14;
+}
+
+/* when the same style being used for multiple selections, you can use 'comma' to add another seletor */
+header a:hover, header a.active {
+    text-decoration: underline;
+}
+
+header nav a {
+    color: #fff;
+}
+
+/* Selecct all links with the nav except the last one*/
+header nav a:not(:last-child) {
+    margin-right: 10px;
+}
