@@ -56,24 +56,38 @@ header nav a:not(:last-child) {
 }
 
 .search-icon {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 #searchbutton {
     height: 20px;
     width: 20px;
-    padding: 0;
     border: 0;
 }
 
-p {
+#p-button {
+    margin-left: 10px;
+}
+
+.software-button {
+    margin-left: 100px;
+}
+
+.button {
+    margin: 15px 0 0 2px;
+    align-items: center;
+    padding: 2px;
+    max-height: 20px;
+}
+
+p.hello {
     color: #4bc385;
     padding-left: 100px;
 }
 
-.button {
-    margin-left: 100px;
+p {
+    color: #4bc385;
 }
 
 h1 {
@@ -81,4 +95,12 @@ h1 {
     text-transform: uppercase;
     padding: 0 0 0 100px;
     margin: 0;
+}
+
+.rotated-text {
+    display: flex;
+    position: absolute; 
+    right: 0; /* Aligns the text to the right */
+    transform: rotate(90deg); /* Rotates the text 90 degrees clockwise */
+    white-space: nowrap; /* Prevents the text from wrapping */
 }
