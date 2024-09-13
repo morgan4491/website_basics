@@ -1,9 +1,17 @@
+/* VARIABLES */
+:root {
+    --highlightColor: #4bc385;
+} 
+/* :root is used to apply this variable to all elements tied to the html file. You can create private variables within a selector as well. The variable itself is created using the '--' (double dash) */
+
+
 /* RESETS */
 /* Consider creating a 'resets.css' file for all resets */
 body {
-    background: #0d133e;
+    background: #2c2e44;
     margin: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 h3 {
@@ -12,6 +20,17 @@ h3 {
 
 a {
     text-decoration: none;
+}
+
+/* ANIMATIONS */
+@keyframes slide-in {
+    from {
+        transform: translateX(-300%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* CUSTOM STYLES */
@@ -71,30 +90,58 @@ header nav a:not(:last-child) {
 }
 
 .software-button {
-    margin-left: 100px;
+    margin-top: 30px;
+    margin-left: 15%;
+    background: none;
+    border: 2px solid var(--highlightColor);
+    padding: 0 0 0 25px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex; /* display flex AND align-items was used to center the 'Software Developer' text, within the button */
+    align-items: center;
+    transition: all .4s; /* This animates the transition when hovering over the button (hover criteria below) */ /* Using transition property in the button selector vs. the hover selector, allows the transition to apply both directions (ie. transition occurs when you first hover AND when you let go) */
 }
 
-.button {
-    margin: 15px 0 0 2px;
+.software-button:hover {
+    background: #36b674dd;
+    color: #111527d9;
+    transform: translateX(10px);
+}
+
+/* aside {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    position: relative;
+    left: 50px;
+} */
+
+aside i {
+    margin: 15px 0 0 5px;
     align-items: center;
     padding: 2px;
     max-height: 20px;
+    color: #fff;
 }
 
 p.hello {
-    color: #4bc385;
-    padding-left: 100px;
+    color: var(--highlightColor);
+    font-size: 1.5rem; /* using 'rem' uses the multiplier (1.5 in this case) to change the font size, referencing the system's root size (most browsers set to 16px) */
+    padding: 45px 0 0 15%;
 }
 
 p {
-    color: #4bc385;
+    color: var(--highlightColor);
 }
 
 h1 {
     color: white;
+    font-size: 2.5rem;
     text-transform: uppercase;
-    padding: 0 0 0 100px;
+    padding: 0 0 0 15%;
     margin: 0;
+    animation: slide-in 1s;
 }
 
 .rotated-text {
@@ -103,4 +150,13 @@ h1 {
     right: 0; /* Aligns the text to the right */
     transform: rotate(90deg); /* Rotates the text 90 degrees clockwise */
     white-space: nowrap; /* Prevents the text from wrapping */
+    top: 200px;
+}
+
+button i{
+    color: #111527d9;
+    font-size: 1.5rem;
+    background: var(--highlightColor);
+    padding: 10px 10px;
+    margin: 0 0 0 15px;
 }
