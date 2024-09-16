@@ -64,11 +64,32 @@ header a {
 /* when the same style being used for multiple selections, you can use 'comma' to add another seletor */
 header a:hover, header a.active {
     text-decoration: underline;
+
 }
 
 header nav a {
     color: #fff;
+    position: relative;
+    text-decoration: none !important;
 }
+
+header nav a:hover:after, header nav a.active:active {
+    /* Pseudo elements REQUIRE that you set/add the content property */
+    content: '';
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+ /* position 'relative' allows you to move an element from its original/current position and not affect the elements around it */
+/* header nav a:first-child {
+    position: relative;
+    top: 50px;
+} */
 
 /* Selecct all links with the nav except the last one*/
 header nav a:not(:last-child) {
@@ -181,6 +202,22 @@ footer {
     padding: 30px 7%;
     color: #bbb;
 }
+
+.chat {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    z-index: 500;
+}
+
+.chat button {
+    background: rgba(0, 0, 0, .5);
+    border: 3px solid var(--highlightColor);
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 5px; /* Lets say you wanted a circular button - set the height and the width of the button to a fixed amount (75px by 75px) and set the border radius to 50% */
+    cursor: pointer;
+}   
 
 /* MEDIA QUERIES */
 @media (max-width: 700px) { /* This is saying - when the viewers screen size is 700px or less, the 'main' styling properties will be adjusted to the settings below. You only need to add the properties you want changed, you do not need to include all properties that were  */
