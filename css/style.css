@@ -7,7 +7,13 @@
 
 /* RESETS */
 /* Consider creating a 'resets.css' file for all resets */
+
+html, body {
+    height: 100%;
+}
 body {
+    display: flex;
+    flex-direction: column;
     background: #2c2e44;
     margin: 0;
     font-family: sans-serif;
@@ -69,6 +75,15 @@ header nav a:not(:last-child) {
     margin-right: 10px;
 }
 
+main {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 45px 3% 0 10%;
+    background-image: linear-gradient(rgba(29, 35, 73, 0.4), rgba(0, 0, 0, 0.6)), url(../images/IMG_2625.PNG); /* Here we are doing two things: 1) stacking one image on top of another and 2) using the linear gradient styling to show how you can use a 'filter' of sorts to transition a gradient over your image *VERY USEFUL WHEN YOUR IMAGE IS BRIGHT AND YOU NEED TO ADD MORE CONTRAST BETWEEN IMAGE AND WORDS ON YOUR WEBPAGE* */
+    background-size: cover;
+}
+
 .search-container {
     display: inline-block;
     align-items: center;
@@ -109,19 +124,16 @@ header nav a:not(:last-child) {
     transform: translateX(10px);
 }
 
-/* aside {
+aside {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
     position: relative;
-    left: 50px;
-} */
+    left: 70px;
+}
 
 aside i {
-    margin: 15px 0 0 5px;
-    align-items: center;
-    padding: 2px;
-    max-height: 20px;
+    margin-right: 8px;
     color: #fff;
 }
 
@@ -133,6 +145,7 @@ p.hello {
 
 aside p {
     color: var(--highlightColor);
+    margin-right: 15px;
 }
 
 h1 {
@@ -144,14 +157,14 @@ h1 {
     animation: slide-in 1s;
 }
 
-.rotated-text {
+/* .rotated-text {
     display: flex;
     position: absolute; 
     right: 0; /* Aligns the text to the right */
-    transform: rotate(90deg); /* Rotates the text 90 degrees clockwise */
-    white-space: nowrap; /* Prevents the text from wrapping */
-    top: 200px;
-}
+    /* transform: rotate(90deg); /* Rotates the text 90 degrees clockwise */
+   /* white-space: nowrap; /* Prevents the text from wrapping */
+   /* top: 200px;
+} */
 
 button i{
     color: #111527d9;
@@ -159,4 +172,26 @@ button i{
     background: var(--highlightColor);
     padding: 10px 10px;
     margin: 0 0 0 15px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background: #333956d9;
+    padding: 30px 7%;
+    color: #bbb;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 700px) { /* This is saying - when the viewers screen size is 700px or less, the 'main' styling properties will be adjusted to the settings below. You only need to add the properties you want changed, you do not need to include all properties that were  */
+    main {
+        background-position: right;
+        background-image: linear-gradient(rgba(29, 35, 73, 0.4), rgba(0, 0, 0, 0.6)), url(../images/IMG_2625.PNG);
+    }
+}
+
+@media (max-width: 400px) {
+    main {
+        background-position: 80% 100%;
+    }
 }
